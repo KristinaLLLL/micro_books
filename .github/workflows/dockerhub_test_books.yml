@@ -14,7 +14,7 @@ jobs:
       - name: Run Docker Container
         run: docker run -p 8000:80 -d kristy27/micro-books-service:latest
       - name: Set up python
-        uses: action/setup-python@v4
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       - name: Install pytest
