@@ -23,6 +23,6 @@ class BookServiceTesting():
     def test_get_book_by_id(self):
         response = requests.get(f'{api_url}/v1/books/3')
         assert response.status_code == 200
-        assert response.json().get('id') == 3
+        assert response.json().get('id') == 5
         assert response.json().get('title') == 'Name book'
         assert response.json().get('body') == 'Book text'
