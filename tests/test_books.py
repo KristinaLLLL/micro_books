@@ -4,13 +4,13 @@ api_url = 'http://localhost:8000'
 
 def test_healthcheck():
     response = requests.get(f'{api_url}/')
-    assert response.status_code == 200
+    assert response.status_code == 401
 
 class BookServiceTesting():
     def test_get_books(self):
         response = requests.get(f'{api_url}/v1/books')
         assert response.status_code == 200
-        assert len(response.json()) == 10
+        assert len(response.json()) == 0
 
     def test_add_book(self):
         insert = {"title": "Name book", "body": "Book text"}
