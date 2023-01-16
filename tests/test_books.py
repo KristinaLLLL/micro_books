@@ -10,13 +10,13 @@ class BookServiceTesting():
     def test_get_books(self):
         response = requests.get(f'{api_url}/v1/books')
         assert response.status_code == 200
-        assert len(response.json()) == 0
+        assert len(response.json()) == 10
 
     def test_add_book(self):
         insert = {"title": "Name book", "body": "Book text"}
         response = requests.post(f'{api_url}/v1/books', json=insert)
         assert response.status_code == 200
-        assert response.json().get('id') == 4
+        assert response.json().get('id') == 3
         assert response.json().get('title') == 'Name book'
         assert response.json().get('body') == 'Book text'
 
